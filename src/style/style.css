@@ -3,7 +3,7 @@
 ========================================*/
 
 .square {
-    background:red;
+    background: red;
     height: 100px;
     opacity: 1;
     transition: all 1s ease;
@@ -11,7 +11,7 @@
 
 .square.square-entering {
     opacity: 1;
-    transform: translateX(0%); 
+    transform: translateX(0%);
 }
 
 .square.square-entered {
@@ -23,15 +23,43 @@
 }
 
 .square.square-exited {
-    opacity: 0; 
+    opacity: 0;
     transform: translateX(-100%);
 }
- 
+
 /*=======================================
                 CSSTRANSITIONS
 ========================================*/
+.cssSq {
+    background: red;
+    height: 100px;
+    opacity: 1;
+    transition: all 5000ms ease;
+}
+
+
+.cssSq-enter-done {}
+
+.cssSq-enter.cssSq-enter-active {}
+
+
+.cssSq-exit-active {
+    background: green;
+
+}
+
+.cssSq-exit-done {
+    background: green;
+
+}
+
+.cssSq-exit-done {
+    opacity: 0;
+}
+
 
 /*=======================================
                 TRANSITIONS GROUP 
 ========================================*/
+
 

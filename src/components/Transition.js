@@ -35,6 +35,8 @@ class TransitionComp extends Component{
                     }}
 
                 >
+
+                
                     { state => (
                         <div className={`square square-${state}`}>
                             {`square square-${state}`}

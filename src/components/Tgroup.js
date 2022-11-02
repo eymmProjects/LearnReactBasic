@@ -1,9 +1,25 @@
 import React, { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 class Tgroup extends Component{
     state = {
-        items:[]
+        items:['14','23','43']
+    }
+
+    showElements(){
+        return this.state.items.map((item,i)=>{
+            <CSSTransition
+             key={i}
+            classNames ="item"
+            timeout={3000}
+            appear={true}
+
+            >
+                <div className="item">{item}</div>
+
+            </CSSTransition>   
+        })
     }
     
     addElements () {
@@ -11,17 +27,30 @@ class Tgroup extends Component{
     }
 
     generateNumber(){
-       
+       let newArray=[
+            ...this.state.items,
+            Math.floor(Math.random()*100)+1
+       ];
+
+       this.setState({
+        items:newArray
+       })
     }
 
     removeNumber(){
-      
+      let newArray = this.state.items.slice(0,-1);
+      this.setState({
+        items:newArray
+       })
     }
 
     render(){
         return(
             <div>
-                {this.addElements()}
+            <TransitionGroup component="div" className="list">
+                {this.showElements()}
+
+            </TransitionGroup>
              
                 <div className="btns">
                     <button onClick={()=> this.generateNumber()}>Add Elements</button>
